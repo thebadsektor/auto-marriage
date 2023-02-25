@@ -107,9 +107,6 @@ module.exports = [
     // Axios - Promise based HTTP client for the browser and node.js
     'node_modules/axios/dist/axios.js',
 
-    //Popper
-    'node_modules/popper.js/dist/popper.min.js',
-
 ];
 
 // window.axios.defaults.headers.common = {

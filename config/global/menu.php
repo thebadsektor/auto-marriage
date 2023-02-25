@@ -224,13 +224,18 @@ return array(
                 'class' => 'menu-sub-accordion menu-active-bg',
                 'items' => array(
                     array(
-                        'title'  => 'Applications',
+                        'title'  => 'Manage Applications',
                         'path'   => 'applications',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
-                        'title'  => 'Applicants',
+                        'title'  => 'Manage Applicants',
                         'path'   => 'applicants',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'  => 'Document Automation',
+                        'path'   => 'docu-auto',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                 ),
@@ -327,11 +332,11 @@ return array(
         ),
 
         // Changelog
-        array(
-            'title' => 'Changelog v'.theme()->getVersion(),
-            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen005.svg", "svg-icon-2"),
-            'path'  => 'documentation/getting-started/changelog',
-        ),
+        // array(
+        //     'title' => 'Changelog v'.theme()->getVersion(),
+        //     'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen005.svg", "svg-icon-2"),
+        //     'path'  => 'documentation/getting-started/changelog',
+        // ),
     ),
 
     // Horizontal menu

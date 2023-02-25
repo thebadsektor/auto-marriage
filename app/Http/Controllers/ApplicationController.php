@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Applicant;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
@@ -19,6 +20,13 @@ class ApplicationController extends Controller
         $applications = Application::with('applicants')->paginate(15);
 
         return view('pages.application.index', compact('applications'));
+
+    }
+    
+    public function docu_auto()
+    {
+
+        return view('pages.document.docu');
 
     }
 
@@ -44,6 +52,7 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'registry_no' => 'required',
             'groom_id' => 'required',
@@ -55,7 +64,10 @@ class ApplicationController extends Controller
             'issuance_date' => 'required',
         ]);
 
-        Application::create([
+        $groom = Applicant::find($request->groom_id);
+        $bride = Applicant::find($request->bride_id);
+
+        $newApplication = Application::create([
             'registry_no' => $request->registry_no,
             'groom_id' => $request->groom_id,
             'bride_id' => $request->bride_id,
@@ -66,6 +78,19 @@ class ApplicationController extends Controller
             'license_no' => $request->license_no,
             'issuance_date' => $request->issuance_date,
         ]);
+
+        $lastCreatedId = $newApplication->id;
+
+        $groom->update([
+            'application_id' => $lastCreatedId
+
+        ]);
+
+        $bride->update([
+            'application_id' => $lastCreatedId
+
+        ]);
+
 
         return redirect('applications');
     }
@@ -83,6 +108,14 @@ class ApplicationController extends Controller
 
         return view('pages.application.show', compact('application', 'applicants'));
     }
+     
+    public function show_form(Application $application)
+    {
+        $application = Application::with('applicants')->find($application->id);
+        $applicants = $application->applicants;
+
+        return view('pages.application.form', compact('application', 'applicants'));
+    }
 
     public function table()
     {
@@ -97,7 +130,13 @@ class ApplicationController extends Controller
      */
     public function edit(Application $application)
     {
-        return view('pages.application.edit')->with('application', $application);
+        $grooms = Applicant::where('role', 'Groom')->orderBy('lastname')->get();
+        $brides = Applicant::where('role', 'Bride')->orderBy('lastname')->get();
+        $application = Application::find($application->id);
+        return view('pages.application.edit')
+        ->with('application', $application)
+        ->with('grooms', $grooms)
+        ->with('brides', $brides);
     }
 
     /**

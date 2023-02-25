@@ -338,7 +338,7 @@
                             <label for="relationship_degree" class="col-md-4 col-form-label text-md-end">{{ __('Degree of relationship of contracting parties') }}</label>
 
                             <div class="col-md-6">
-                                <input id="relationship_degree" type="date"
+                                <input id="relationship_degree" type="text"
                                     class="form-control @error('relationship_degree') is-invalid @enderror" name="relationship_degree"
                                     value="{{ $applicant->relationship_degree }}" required autocomplete="relationship_degree" autofocus>
 

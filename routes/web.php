@@ -104,7 +104,9 @@ Route::put('/application/update/{application}', [ApplicationController::class, '
 Route::delete('/application/destroy/{application}', [ApplicationController::class, 'destroy'])->name('destroy-application');
 Route::post('/applications/batch-destroy', [ApplicationController::class, 'batchDestroy'])->name('batch-destroy-applications');
 
+Route::get('/application/show-form/{application}', [ApplicationController::class, 'show_form'])->name('show-application-form');
 Route::get('/table', [ApplicationController::class, 'table']);
+Route::get('/docu-auto', [ApplicationController::class, 'docu_auto']);
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite

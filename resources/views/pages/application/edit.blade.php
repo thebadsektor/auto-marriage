@@ -49,13 +49,14 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="groom_id"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Groom') }}</label>
+                            <label for="groom_id"class="col-md-4 col-form-label text-md-end">{{ __('Groom') }}</label>
 
                             <div class="col-md-6">
-                                <input id="groom_id" type="text"
-                                    class="form-control @error('groom_id') is-invalid @enderror" name="groom_id"
-                                    value="{{ $application->groom_id }}" required autocomplete="groom_id" autofocus>
+                                <select class="form-select" aria-label="Select the groom" name="groom_id" id="groom_id">
+                                    @foreach ($grooms as $groom)
+                                        <option value="{{$groom->id}}">{{$groom->lastname  .', '. $groom->firstname}}</option>
+                                    @endforeach
+                                </select>
 
                                 @error('groom_id')
                                     <span class="invalid-feedback" role="alert">
@@ -65,15 +66,16 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="bride_id"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Bride') }}</label>
+                            <label for="bride_id" class="col-md-4 col-form-label text-md-end">{{ __('Bride') }}</label>
 
                             <div class="col-md-6">
-                                <input id="bride_id" type="text"
-                                    class="form-control @error('bride_id') is-invalid @enderror" name="bride_id"
-                                    value="{{ $application->bride_id }}" required autocomplete="bride_id" autofocus>
+                                <select class="form-select" aria-label="Select the bride" name="bride_id" id="bride_id">
+                                    @foreach ($brides as $bride)
+                                        <option value="{{$bride->id}}">{{$bride->lastname  .', '. $bride->firstname}}</option>
+                                    @endforeach
+                                </select>
 
-                                @error('bride_id')
+                                @error('bride')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

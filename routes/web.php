@@ -11,6 +11,8 @@ use App\Http\Controllers\ActualUseController;
 use App\Http\Controllers\AdditionalItemController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\FormsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -107,6 +109,11 @@ Route::post('/applications/batch-destroy', [ApplicationController::class, 'batch
 Route::get('/application/show-form/{application}', [ApplicationController::class, 'show_form'])->name('show-application-form');
 Route::get('/table', [ApplicationController::class, 'table']);
 Route::get('/docu-auto', [ApplicationController::class, 'docu_auto']);
+Route::get('/calendar', [AppointmentController::class, 'index']);
+
+Route::get('/forms/parental-advice', [FormsController::class, 'parentalAdvice']);
+Route::get('/forms/parental-advice2', [FormsController::class, 'parentalAdvice2']);
+Route::get('/forms/parental-consent', [FormsController::class, 'parentalConsent']);
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite

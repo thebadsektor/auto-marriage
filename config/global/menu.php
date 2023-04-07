@@ -208,8 +208,7 @@ return array(
             'content' => '<span class="menu-section text-muted text-uppercase fs-8 ls-1">Modules</span>',
         ),
 
-
-        // RPTS Setting
+        // Main
         array(
             'title'      => 'Marriage License Application',
             'icon'       => array(
@@ -240,6 +239,46 @@ return array(
                     ),
                 ),
             ),
+        ),
+
+        // Forms
+        array(
+            'title'      => 'Forms',
+            'icon'       => array(
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/communication/com006.svg", "svg-icon-2"),
+                'font' => '<i class="bi bi-person fs-2"></i>',
+            ),
+            'classes'    => array('item' => 'menu-accordion'),
+            'attributes' => array(
+                "data-kt-menu-trigger" => "click",
+            ),
+            'sub'        => array(
+                'class' => 'menu-sub-accordion menu-active-bg',
+                'items' => array(
+                    array(
+                        'title'  => 'Parental Advice',
+                        'path'   => 'forms/parental-advice',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'  => 'Parental Advice (2)',
+                        'path'   => 'forms/parental-advice2',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'  => 'Parental Consent',
+                        'path'   => 'forms/parental-consent',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                ),
+            ),
+        ),
+
+        //// Dashboard
+        array(
+            'title' => 'Calendar',
+            'path'  => 'calendar',
+            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/art/art002.svg", "svg-icon-2"),
         ),
 
         // Account

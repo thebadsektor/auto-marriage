@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date('receipt_date');
             $table->string('license_no');
             $table->date('issuance_date');
+            
 
             $table->timestamps();
         });

@@ -106,6 +106,8 @@ module.exports = [
 
     // Axios - Promise based HTTP client for the browser and node.js
     'node_modules/axios/dist/axios.js',
+    
+    'node_modules/fullcalendar/main.min.js',
 
 ];
 

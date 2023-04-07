@@ -165,7 +165,86 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="sworn_date"
+                                class="col-md-4 col-form-label text-md-end">{{ __('Date Subscribe and Sworn') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="sworn_date" type="date"
+                                    class="form-control @error('sworn_date') is-invalid @enderror" name="sworn_date"
+                                    value="{{ old('sworn_date') }}" required autocomplete="sworn_date" autofocus>
+
+                                @error('sworn_date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="sworn_place"
+                                class="col-md-4 col-form-label text-md-end">{{ __('Place Subscribed and Sworn') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sworn_place" type="text"
+                                    class="form-control @error('sworn_place') is-invalid @enderror" name="sworn_place"
+                                    value="{{ old('sworn_place') }}" required autocomplete="sworn_place" autofocus>
+
+                                @error('sworn_place')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="row mb-3">
+                                <label for="ctc_no"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Community Tax Certificate No.') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="ctc_no" type="text"
+                                        class="form-control @error('ctc_no') is-invalid @enderror" name="ctc_no"
+                                        value="{{ old('ctc_no') }}" required autocomplete="ctc_no" autofocus>
+    
+                                    @error('ctc_no')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="ctc_date"
+                                class="col-md-4 col-form-label text-md-end">{{ __('Community Tax Certificate Date Issued') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ctc_date" type="date"
+                                    class="form-control @error('ctc_date') is-invalid @enderror" name="ctc_date"
+                                    value="{{ old('ctc_date') }}" required autocomplete="ctc_date" autofocus>
+
+                                @error('ctc_date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="ctc_place"
+                                class="col-md-4 col-form-label text-md-end">{{ __('Community Tax Certificate Place   Issued') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ctc_place" type="text"
+                                    class="form-control @error('ctc_place') is-invalid @enderror" name="ctc_place"
+                                    value="{{ old('ctc_place') }}" required autocomplete="ctc_place" autofocus>
+
+                                @error('ctc_place')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

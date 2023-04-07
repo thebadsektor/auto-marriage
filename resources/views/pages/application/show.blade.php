@@ -119,6 +119,46 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4">
+                                <p>Date Subscribed and Sworn</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $application->sworn_date }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <p>Place Subscribed and Sworn</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $application->sworn_date }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <p>Community Tax Certificate No.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $application->ctc_no }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <p>Community Tax Certificate No. Issued Date</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $application->ctc_date }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <p>Community Tax Certificate No. Place Issued</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ $application->ctc_place }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
                                 <p>Date Created</p>
                             </div>
                             <div class="col-md-6">

@@ -62,6 +62,11 @@ class ApplicationController extends Controller
             'rec_by' => 'required',
             'receipt_date' => 'required',
             'issuance_date' => 'required',
+            'sworn_date' => 'required',
+            'sworn_place' => 'required',
+            'ctc_no' => 'required',
+            'ctc_date' => 'required',
+            'ctc_place' => 'required',
         ]);
 
         $groom = Applicant::find($request->groom_id);
@@ -77,6 +82,11 @@ class ApplicationController extends Controller
             'receipt_date' => $request->receipt_date,
             'license_no' => $request->license_no,
             'issuance_date' => $request->issuance_date,
+            'sworn_date' => $request->sworn_date,
+            'sworn_place' => $request->sworn_place,
+            'ctc_no' => $request->ctc_no,
+            'ctc_date' => $request->ctc_date,
+            'ctc_place' => $request->ctc_place,
         ]);
 
         $lastCreatedId = $newApplication->id;
@@ -148,6 +158,8 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, Application $application)
     {
+        // dd($request);
+
         $this->validate($request, [
             'registry_no' => 'required',
             'groom_id' => 'required',
@@ -157,6 +169,11 @@ class ApplicationController extends Controller
             'rec_by' => 'required',
             'receipt_date' => 'required',
             'issuance_date' => 'required',
+            'sworn_date' => 'required',
+            'sworn_place' => 'required',
+            'ctc_no' => 'required',
+            'ctc_date' => 'required',
+            'ctc_place' => 'required',
         ]);
 
         $application->update([
@@ -169,6 +186,11 @@ class ApplicationController extends Controller
             'receipt_date' => $request->receipt_date,
             'license_no' => $request->license_no,
             'issuance_date' => $request->issuance_date,
+            'sworn_date' => $request->sworn_date,
+            'sworn_place' => $request->sworn_place,
+            'ctc_no' => $request->ctc_no,
+            'ctc_date' => $request->ctc_date,
+            'ctc_place' => $request->ctc_place,
         ]);
 
         return redirect('application/show/'.$application->id);

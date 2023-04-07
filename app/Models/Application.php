@@ -24,6 +24,10 @@ class Application extends Model
     'receipt_date',
     'license_no',
     'issuance_date',
+    'sworn_date',
+    'sworn_place',
+    'ctc_no',
+    'ctc_date',
+    'ctc_place',
     ];
-
 }

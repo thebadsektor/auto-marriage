@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ParentalForm1;
 use Illuminate\Http\Request;
+use DataTables;
 
 class ParentalForm1Controller extends Controller
 {
@@ -41,9 +42,9 @@ class ParentalForm1Controller extends Controller
     public function process(Request $request)
     {
         // dd($request);
-        if(!empty($request['owner-id'])){
+        if(!empty($request['record-id'])){
 
-            $parental_form = ParentalForm1::find($request['owner-id']);
+            $parental_form = ParentalForm1::find($request['record-id']);
 
             $parental_form->update([
                 'name' => $request['municipality'],
@@ -85,6 +86,12 @@ class ParentalForm1Controller extends Controller
                 'message' => 'Parental Advice Record Created',
             ]);
         }
+    }
+
+    public function all()
+    {
+        $query = ParentalForm1::query()->orderBy('updated_at', 'desc');
+        return DataTables::eloquent($query)->toJson();
     }
 
     /**

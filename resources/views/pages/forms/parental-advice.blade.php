@@ -5,8 +5,9 @@
                 <div class="card-header">
                     <h3 class="card-title">Parental Advice</h3>
                     <div class="card-toolbar">
-                        <button type="button" class="btn btn-sm btn-light">
-                            Action
+                        <button type="button" class="btn btn-sm btn-light" id="btn_owner"
+                        data-bs-toggle="modal" data-bs-target="#form1_modal">
+                            Browse
                         </button>
                     </div>
                 </div>
@@ -131,10 +132,80 @@
             </div>
         </div>
     </div>
-
+@include('pages.forms._parental-advice')
 </x-base-layout>
 <script>
+
+$.ajax({
+    url: "/parental-forms/all",
+    type: "GET",
+    dataType: "json",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+    }
+});
+
 $(document).ready(function() {
+    // Common DataTable configuration object
+    let dataTableConfig = {
+        "language": {
+            "lengthMenu": "Show _MENU_",
+        },
+        "select": true,
+        "pageLength": 5,
+        "dom": "<'row'" +
+            "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+            "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+            ">" +
+            "<'table-responsive'tr>" +
+            "<'row'" +
+            "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+            "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+            ">" +
+            "<'row'>"
+    };
+
+    function initializeDataTable() {
+        let table = $('#parental-form-table').DataTable($.extend(dataTableConfig, {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "/parental-forms/all",
+        "columns": [
+            { "data": "municipality" },
+            { "data": "province" },
+            { "data": "name" },
+            { "data": "address" }
+        ],
+        "createdRow": function(row, data, dataIndex) {
+            console.log("Data used to create row:", data);
+            $(row).attr('data-id', data.id);
+            $(row).attr('data-municipality', data.municipality);
+            $(row).attr('data-province', data.province);
+            $(row).attr('data-name', data.name);
+            $(row).attr('data-address', data.address);
+            $(row).attr('data-name_partner', data.name_partner);
+            $(row).attr('data-day', data.day);
+            $(row).attr('data-month', data.month);
+            $(row).attr('data-year', data.year);
+            $(row).attr('data-sworn_address', data.sworn_address);
+            $(row).attr('data-publish_month', data.publish_month);
+            $(row).attr('data-publish_year', data.publish_year);
+            $(row).attr('data-created', data.created_at);
+            $(row).attr('data-updated', data.updated_at);
+            $(row).addClass('selectable');
+        }
+        }));
+        return table;
+    }
+
+    let dataTable = initializeDataTable();
+
     $('#btn_process_form').on('click', function(event) {
 
         var form = $('#form-process-form');

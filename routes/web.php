@@ -114,6 +114,7 @@ Route::get('/calendar', [AppointmentController::class, 'index']);
 
 Route::get('/forms/parental-advice', [FormsController::class, 'parentalAdvice']);
 Route::post('/parental-form/process', [ParentalForm1Controller::class, 'process'])->name('process-parental-advice');
+Route::get('/parental-forms/all', [ParentalForm1Controller::class, 'all'])->name('all.parental-forms');
 Route::get('/forms/parental-advice2', [FormsController::class, 'parentalAdvice2']);
 Route::get('/forms/parental-consent', [FormsController::class, 'parentalConsent']);
 /**

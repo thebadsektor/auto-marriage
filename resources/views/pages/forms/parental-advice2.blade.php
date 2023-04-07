@@ -11,96 +11,97 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table-bordered">
-                            <thead>
-                                <tr>
-                                    <td colspan="20"><h5>MUNICIPAL FORM NO. 68 (FORM NO. 8)</h5>
-                                        <h1 class="text-center "> ADVICE UPON INTENDED MARRIAGE</h1>
-                                        <h3 class="text-center"> (FOR MALE)</h3> 
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="20">
-                                        <p>Place ______________________</p>
-                                        <p>To _______________________________</p>
+                    <form method="POST" action="{{ route('store-parental-advice2') }}">
+                        @csrf
+                        <div class="table-responsive">
+                            <table class="table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td colspan="20"><h5>MUNICIPAL FORM NO. 68 (FORM NO. 8)</h5>
+                                            <h1 class="text-center "> ADVICE UPON INTENDED MARRIAGE</h1>
+                                            <h3 class="text-center"> (FOR MALE)</h3>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p>Place <input type="text" name="address"></p>
+                                            <p>To <input type="text" name="name_male"></p>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="20">
-                                        <p>Our/My advice upon your intended marriage with ___________________________________ having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry her.</p></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="10">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">     (Signature of father)	</p> </td>
-                                    <td colspan="10">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">     (Signature of motther)	</p> </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="20">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">    (Signature of Legal Guardian or Head of Welfare Institution)	</p> </td>
-                                        
-                                </tr>
-                                <tr> 
-                                    <td colspan="20">
-                                        <h1 class="text-center "> ADVICE UPON INTENDED MARRIAGE</h1>
-                                        <h3 class="text-center"> (FOR FEMALE)</h3> 
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="20">
-                                        <p>Place ______________________</p>
-                                        <p>To _______________________________</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p>Our/My advice upon your intended marriage with <input type="text" name="name_female"> having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry her.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="10">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">     (Signature of father)	</p> </td>
+                                        <td colspan="10">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">     (Signature of motther)	</p> </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">    (Signature of Legal Guardian or Head of Welfare Institution)	</p> </td>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="20">
-                                        <p>Our/My advice upon your intended marriage with ___________________________________ having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry her.</p></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="10">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">     (Signature of father)	</p> </td>
-                                    <td colspan="10">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">     (Signature of motther)	</p> </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="20">
-                                        <p class="text-center">      ____________________________________</p>
-                                        <p class="text-center">    (Signature of Legal Guardian or Head of Welfare Institution)	</p> </td>
-                                        
-                                </tr>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <h1 class="text-center "> ADVICE UPON INTENDED MARRIAGE</h1>
+                                            <h3 class="text-center"> (FOR FEMALE)</h3>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p>Place <input type="text" name="address2"></p>
+                                            <p>To <input type="text" name="name_female2"></p>
 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p>Our/My advice upon your intended marriage with <input type="text" name="name_male2"> having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry her.</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="10">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">     (Signature of father)	</p> </td>
+                                        <td colspan="10">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">     (Signature of motther)	</p> </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">    (Signature of Legal Guardian or Head of Welfare Institution)	</p> </td>
 
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
+                                            <h4 class="text-center"> INSTRUCTIONS   </h4>
+                                            <p> 1.	Both parents are required to sign the advice if living. </p>
+                                            <p> 2.	The advice together with the sworn statement that the advice has been asked (See Form No. 7) shall accompany the application for marriage license. (Rep. Act 386, Art. 62).</p>
+                                            <p class="text-center">(Cross out unnecessary words)</p>
 
-                                <tr>
-                                    <td colspan="20">
-                                        <h4 class="text-center"> INSTRUCTIONS   </h4>
-                                        <p> 1.	Both parents are required to sign the advice if living. </p>
-                                        <p> 2.	The advice together with the sworn statement that the advice has been asked (See Form No. 7) shall accompany the application for marriage license. (Rep. Act 386, Art. 62).</p>
-                                        <p class="text-center">(Cross out unnecessary words)</p>
-                                    
-                                    </td>
-                                </tr>
-                                
-
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card-footer">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Save') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

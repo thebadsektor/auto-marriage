@@ -47,9 +47,9 @@ class ParentalForm1Controller extends Controller
             $parental_form = ParentalForm1::find($request['record-id']);
 
             $parental_form->update([
-                'name' => $request['municipality'],
-                'address' => $request['province'],
-                'telephone' => $request['name'],
+                'municipality' => $request['municipality'],
+                'province' => $request['province'],
+                'name' => $request['name'],
                 'address' => $request['address'],
                 'name_partner' => $request['name_partner'],
                 'day' => $request['day'],
@@ -68,9 +68,9 @@ class ParentalForm1Controller extends Controller
         }else{
 
             $parental_form = ParentalForm1::create([
-                'name' => $request['municipality'],
-                'address' => $request['province'],
-                'telephone' => $request['name'],
+                'municipality' => $request['municipality'],
+                'province' => $request['province'],
+                'name' => $request['name'],
                 'address' => $request['address'],
                 'name_partner' => $request['name_partner'],
                 'day' => $request['day'],

@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('store-parental-advice2') }}">
+                    <form method="POST" action="{{ route('process-parental-advice') }}">
                         @csrf
                         <div class="table-responsive">
                             <table class="table-bordered">

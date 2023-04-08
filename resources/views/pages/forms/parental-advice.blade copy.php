@@ -3,25 +3,23 @@
         <div class="col-xl-12">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice') }}" class="w-100">
+                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice') }}">
                         @csrf
-                        <div class="w-100 d-flex align-items-center">
-                            <h3 class="card-title fw-bold text-nowrap">Parental Advice</h3><input class="form-control h-30px fw-normal d-inline-block" type="text" id="form_id" name="form_id" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px" readonly>
-                            <a href="#" id="btn_clear" class="btn btn-sm btn-secondary d-flex justify-content-center align-items-center" style="font-size: 11px; height: 30px; width: 50px;">Clear</a>
-                            <div class="w-100 card-toolbar justify-content-end">
-                                <button type="button" class="btn btn-sm btn-info" id="btn_clear" data-bs-toggle="modal" data-bs-target="#form1_modal">
-                                    Browse
-                                </button>
-                            </div>
-                        </div>
+
+                    <h3 class="card-title">Parental Advice: <input type="text" id="form_id" name="form_id" style="width: 30px" disabled/></h3>
+                    <div class="card-toolbar">
+                        <button type="button" class="btn btn-sm btn-light" id="btn_owner"
+                        data-bs-toggle="modal" data-bs-target="#form1_modal">
+                            Browse
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
                         <div class="table-responsive">
                             <table class="table-bordered">
                                 <thead>
                                     <tr>
-                                        <td class="py-5 px-5">
-                                            <h5>(MUNICIPAL FORM NO. 67)</h5>
+                                        <td colspan="20"><h5>(MUNICIPAL FORM NO. 67)</h5>
                                             <h4 class="text-center"> FORM NO.7 </h4>
                                             <h1 class="text-center "> SWORN STATEMENT THAT ADVICE OF PARENT OR GUARDIAN HAS BEEN ASKED</h1>
                                         </td>
@@ -29,43 +27,41 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="py-5 px-5 d-flex flex-column gap-3">
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <div class="text-nowrap">City or Municipality of</div>
-                                                <input class="form-control h-30px fw-normal" type="text" id="municipality" name="municipality" style="background-color: #F2F0F0; width: 180px">
+                                        <td colspan="20" class="align-middle">
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <p>City or Municipality of</p>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <input type="text" id="municipality" name="municipality">
+                                                </div>
                                             </div>
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <div class="text-nowrap">Province of</div>
-                                                <input class="form-control h-30px fw-normal" type="text" id="province" name="province" style="background-color: #F2F0F0; width: 180px">
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <p>Province of</p>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <input type="text" id="province" name="province">
+                                                </div>
                                             </div>
                                         </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td class="py-5 px-5">
-                                            <div>I, <input class="form-control h-30px fw-normal d-inline-block" type="text" id="name" name="name" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px"> resident of <input class="form-control h-30px fw-normal d-inline-block" type="text"  id="address" name="address"
-                                                    style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px"> and aged {above twenty and under twenty-five, above eighteen but under twenty-three} years of being duly sworn, do
-                                                hereby
-                                                depose and
-                                                say
-                                                that I have
-                                                asked my {parents,
-                                                guardians} for advice upon my intended marriage with <input class="form-control h-30px fw-normal d-inline-block" type="text" id="name_partner" name="name_partner" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px"> and that the advice given is attached hereto or has been refused.
-                                            </div>
-                                        </td>
                                     </tr>
                                     <tr>
-                                        <td class="py-5 px-5">
-                                            <p class="text-center"> ____________________________________</p>
-                                            <p class="text-center"> (Signature of person obliged to ask advice)</p>
-                                        </td>
+                                        <td colspan="20">
+                                            <p>I, <input type="text" id="name" name="name"> resident of <input type="text" id="address" name="address"> and aged {above twenty and under twenty-five, above eighteen but under twenty-three} years of being duly sworn , do hereby depose and say that I have asked my {parents, guardians} for advice upon my intended marriage with  <input type="text" id="name_partner" name="name_partner"> and that the advice given is attached hereto or has been refused.</p></td>
                                     </tr>
                                     <tr>
-                                        <td class="py-5 px-5 d-flex flex-column gap-3">
+                                        <td colspan="20">
+                                            <p class="text-center">      ____________________________________</p>
+                                            <p class="text-center">  (Signature of person obliged to ask advice)</p> </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="20">
                                             <p>SUBSCRIBED AND SWORN to before me this
-                                                <input class="form-control h-30px fw-normal d-inline-block" type="number" id="day" name="day" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px">
+                                                <input type="number" id="day" name="day">
                                                 day of
-                                                <select class="form-control h-30px fw-normal d-inline-block py-1" id="month" name="month" style="background-color: #F2F0F0; width: 140px; margin-left: 4px; margin-right: 4px">
+                                                <select id="month" name="month">
                                                     <option value="01">January</option>
                                                     <option value="02">February</option>
                                                     <option value="03">March</option>
@@ -80,48 +76,40 @@
                                                     <option value="12">December</option>
                                                 </select>
 
-                                                , <input class="form-control h-30px fw-normal d-inline-block" type="number" id="year" name="year" style="background-color: #F2F0F0; width: 100px; margin-left: 4px; margin-right: 4px">, at <input class="form-control h-30px fw-normal d-inline-block" type="text" id="sworn_address" name="sworn_address"
-                                                    style="background-color: #F2F0F0; width: 200px; margin-left: 4px; margin-right: 4px">, Philippines.
-                                            </p>
+                                                , <input type="number" id="year" name="year">,  at <input type="text" id="sworn_address" name="sworn_address">, Philippines. </p>
                                         </td>
                                     </tr>
-
                                     <tr>
-                                        <td class="py-5 px-5">
+                                        <td colspan="20">
                                             <p class="text-center"> _______________________________________</p>
-                                            <p class="text-center"> (Signature of person administering oath)</p>
-                                        </td>
+                                            <p class="text-center">  (Signature of person administering oath)</p></td>
                                     </tr>
                                     <tr>
-                                        <td class="py-5 px-5">
+                                        <td colspan="20">
                                             <p class="text-center"> ___________________________________________</p>
                                             <p class="text-center"> (Position)</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="py-5 px-5">
-                                            <h4 class="text-center"> INSTRUCTIONS </h4>
-                                            <p><span class="fw-bolder">1.</span> Each applicant shall be required to accomplish this form if within the ages indicated above. </p>
-                                            <p><span class="fw-bolder">2.</span> In case the advice has not been obtained, or if it be unfavorable, the Marriage License (Form No. 10) should be annotated above the signature of the Local Civil Registrar in the following manner. “Note: The advice upon the intended marriage of <input class="form-control fw-normal d-inline-block" type="text"
-                                                id="name2" name="name2" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px; height: 28px;"> with <input class="form-control fw-normal d-inline-block" type="text" id="name_partner2" name="name_partner2" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px; margin-top: 8px; height: 28px;"> not having been
-                                                obtained or having been refused, the marriage shall not take place till after three months following completion of the publication, on
-                                                <select id="publish_month" name="publish_month" class="form-control h-24px fw-normal d-inline-block py-1" style="background-color: #F2F0F0; width: 140px; margin-left: 4px; margin-right: 4px; margin-top: 8px; height: 28px;">
-                                                    <option value="01">January</option>
-                                                    <option value="02">February</option>
-                                                    <option value="03">March</option>
-                                                    <option value="04">April</option>
-                                                    <option value="05">May</option>
-                                                    <option value="06">June</option>
-                                                    <option value="07">July</option>
-                                                    <option value="08">August</option>
-                                                    <option value="09">September</option>
-                                                    <option value="10">October</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">December</option>
-                                                </select>, 20<input class="form-control fw-normal d-inline-block" type="number" id="publish_year" name="publish_year" style="background-color: #F2F0F0; width: 70px; margin-left: 4px; margin-right: 4px;  height: 28px;">, of the application for marriage license.”
-                                            </p>
+                                        <td colspan="20">
+                                            <h4 class="text-center"> INSTRUCTIONS   </h4>
+                                            <p> 1.	Each applicant shall be required to accomplish this form if within the ages indicated above. </p>
+                                            <p> 2.	In case the advice has not been obtained, or if it be unfavorable, the Marriage License (Form No. 10) should be annotated above the signature of the Local Civil Registrar in the following manner. “Note: The advice upon the intended marriage of <input type="text" id="name2" name="name2"> with <input type="text" id="name_partner2" name="name_partner2"> not having been obtained or having been refused, the marriage shall not take place till after three months following completion of the publication, on
+                                            <select id="publish_month" name="publish_month">
+                                                <option value="01">January</option>
+                                                <option value="02">February</option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>, 20<input type="number" id="publish_year" name="publish_year" style="width: 30px">, of the application for marriage license.”</p>
                                             <p>*Cross out unnecessary words</p>
-
                                         </td>
                                     </tr>
                                 </tbody>
@@ -144,7 +132,7 @@
             </div>
         </div>
     </div>
-    @include('pages.forms._parental-advice')
+@include('pages.forms._parental-advice')
 </x-base-layout>
 <script>
 
@@ -189,14 +177,10 @@ $(document).ready(function() {
         "serverSide": true,
         "ajax": "/parental-forms/all",
         "columns": [
+            { "data": "municipality" },
+            { "data": "province" },
             { "data": "name" },
-            { "data": "name_partner" },
-            {
-              "data": null,
-              "render": function (data) {
-                return data.municipality + ", " + data.province;
-              }
-            }
+            { "data": "address" }
         ],
         "createdRow": function(row, data, dataIndex) {
             console.log("Data used to create row:", data);
@@ -233,10 +217,10 @@ $(document).ready(function() {
         var url = form.attr('action');
         var method = form.attr('method');
         var data = form.serialize();
-        var form_id = $('#form_id').val();
-        console.log(data);
+        var personId = $('#record-id').val();
+
         // Check if owner_id field is present
-        if (data.indexOf('form_id=') !== -1) {
+        if (data.indexOf('record-id=') !== -1) {
             console.log('Update!');
         } else {
             console.log('New!');
@@ -333,23 +317,24 @@ $(document).ready(function() {
             modal.hide();
         });
 
-        $('#btn_clear').on('click', function(event) {
-            event.preventDefault(); // prevent the default behavior of the link
-            $('#form_id').val("");
-            $('#municipality').val("");
-            $('#province').val("");
-            $('#name').val("");
-            $('#name2').val("");
-            $('#address').val("");
-            $('#name_partner').val("");
-            $('#name_partner2').val("");
-            $('#day').val("");
-            $('#year').val("");
-            $('#sworn_address').val("");
-            $('#publish_month').val("");
-            $('#publish_year').val("");
-            // $('#owner_created_at').text("---");
-            // $('#owner_updated_at').text("---");
+        // Reset the form and toggle button
+        $('#process_owner_toggle').on('click', function() {
+
+            if ($(this).hasClass('badge-success')) {
+                $(this).text("DESELECT").removeClass('badge-success').addClass('badge-warning').removeAttr('disabled').css('pointer-events', 'auto');
+                $('#owners-table tbody tr').removeClass('selected');
+            } else {
+                $('#owner_id').val("");
+                $('#owner_title').text("");
+                $('#owner_name').val("");
+                $('#owner_address').val("");
+                $('#owner_telephone').val("");
+                $('#owner_tin').val("");
+                $('#owner_created_at').text("---");
+                $('#owner_updated_at').text("---");
+                $(this).text("NEW").removeClass('badge-warning').addClass('badge-success text-light').css('pointer-events', 'none');
+                $('#owners-table').DataTable().rows('.selected').deselect();
+            }
         });
     });
 });

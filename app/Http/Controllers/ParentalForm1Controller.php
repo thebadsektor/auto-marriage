@@ -42,9 +42,9 @@ class ParentalForm1Controller extends Controller
     public function process(Request $request)
     {
         // dd($request);
-        if(!empty($request['record-id'])){
+        if(!empty($request['form_id'])){
 
-            $parental_form = ParentalForm1::find($request['record-id']);
+            $parental_form = ParentalForm1::find($request['form_id']);
 
             $parental_form->update([
                 'municipality' => $request['municipality'],
@@ -90,8 +90,24 @@ class ParentalForm1Controller extends Controller
 
     public function all()
     {
-        $query = ParentalForm1::query()->orderBy('updated_at', 'desc');
-        return DataTables::eloquent($query)->toJson();
+        $form1 = ParentalForm1::query()->orderBy('updated_at', 'desc');
+        return DataTables::eloquent($form1)
+        ->addColumn('action', function($form1) {
+            return 'data-id="' . $form1->id . '"
+            data-municipality="' . $form1->municipality . '"
+            data-province="' . $form1->province . '"
+            data-name="' . $form1->name . '"
+            data-address="' . $form1->address . '"
+            data-name-partner="' . $form1->name_partner . '"
+            data-day="' . $form1->day . '"
+            data-month="' . $form1->month . '"
+            data-year="' . $form1->year . '"
+            data-sworn-address="' . $form1->sworn_address . '"
+            data-publish-month="' . $form1->publish_month . '"
+            data-publish-year="' . $form1->publish_year . '"
+            data-created="' . $form1->created_at . '"
+            data-updated="' . $form1->updated_at . '"';
+        })->toJson();
     }
 
     /**

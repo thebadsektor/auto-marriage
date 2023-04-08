@@ -2,13 +2,13 @@
 
     <!--begin::Signin Form-->
     <form method="POST" action="{{ theme()->getPageUrl('login') }}" class="form w-100" novalidate="novalidate" id="kt_sign_in_form">
-    @csrf
+        @csrf
 
-    <!--begin::Heading-->
+        <!--begin::Heading-->
         <div class="text-center mb-10">
             <!--begin::Title-->
             <h1 class="text-dark mb-3">
-                {{ __('Sign In to Metronic') }}
+                {{ __('Sign In') }}
             </h1>
             <!--end::Title-->
 
@@ -24,7 +24,9 @@
         </div>
         <!--begin::Heading-->
 
-        <div class="mb-10 bg-light-info p-8 rounded"><div class="text-info"> Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to continue. </div></div>
+        <div class="mb-10 bg-light-info p-8 rounded">
+            <div class="text-info"> Use account <strong>admin@demo.com</strong> and password <strong>demo</strong> to continue. </div>
+        </div>
 
         <!--begin::Input group-->
         <div class="fv-row mb-10">
@@ -33,7 +35,7 @@
             <!--end::Label-->
 
             <!--begin::Input-->
-            <input class="form-control form-control-lg form-control-solid" type="email" name="email" autocomplete="off" value="{{ old('email', 'demo@demo.com') }}" required autofocus/>
+            <input class="form-control form-control-lg form-control-solid" type="email" name="email" autocomplete="off" value="{{ old('email', 'demo@demo.com') }}" required autofocus />
             <!--end::Input-->
         </div>
         <!--end::Input group-->
@@ -51,13 +53,13 @@
                     <a href="{{ theme()->getPageUrl('password.request') }}" class="link-primary fs-6 fw-bolder">
                         {{ __('Forgot Password ?') }}
                     </a>
-            @endif
-            <!--end::Link-->
+                @endif
+                <!--end::Link-->
             </div>
             <!--end::Wrapper-->
 
             <!--begin::Input-->
-            <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" value="demo" required/>
+            <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" value="demo" required />
             <!--end::Input-->
         </div>
         <!--end::Input group-->
@@ -65,9 +67,9 @@
         <!--begin::Input group-->
         <div class="fv-row mb-10">
             <label class="form-check form-check-custom form-check-solid">
-                <input class="form-check-input" type="checkbox" name="remember"/>
+                <input class="form-check-input" type="checkbox" name="remember" />
                 <span class="form-check-label fw-bold text-gray-700 fs-6">{{ __('Remember me') }}
-            </span>
+                </span>
             </label>
         </div>
         <!--end::Input group-->
@@ -81,21 +83,21 @@
             <!--end::Submit button-->
 
             <!--begin::Separator-->
-            <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div>
+            {{-- <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div> --}}
             <!--end::Separator-->
 
             <!--begin::Google link-->
-            <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg') }}" class="h-20px me-3"/>
+            {{-- <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg') }}" class="h-20px me-3" />
                 {{ __('Continue with Google') }}
-            </a>
+            </a> --}}
             <!--end::Google link-->
 
             <!--begin::Facebook link-->
-            <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg') }}" class="h-20px me-3"/>
+            {{-- <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg') }}" class="h-20px me-3" />
                 {{ __('Continue with Facebook') }}
-            </a>
+            </a> --}}
             <!--end::Facebook link-->
         </div>
         <!--end::Actions-->

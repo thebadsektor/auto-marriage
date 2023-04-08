@@ -20,11 +20,13 @@
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
                                     <th scope="col">Groom</th>
                                     <th scope="col">Bride</th>
-                                    <th scope="col">Address</th>
+                                    <th scope="col">Municipality</th>
+                                    <th scope="col">Province</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="py-5 fw-semibold  border-bottom border-gray-300 fs-6">
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

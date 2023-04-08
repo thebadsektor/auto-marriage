@@ -191,12 +191,8 @@ $(document).ready(function() {
         "columns": [
             { "data": "name" },
             { "data": "name_partner" },
-            {
-              "data": null,
-              "render": function (data) {
-                return data.municipality + ", " + data.province;
-              }
-            }
+            { "data": "municipality" },
+            { "data": "province" }
         ],
         "createdRow": function(row, data, dataIndex) {
             console.log("Data used to create row:", data);

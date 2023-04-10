@@ -232,11 +232,6 @@ return array(
                         'path'   => 'applicants',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
-                    // array(
-                    //     'title'  => 'Document Automation',
-                    //     'path'   => 'docu-auto',
-                    //     'bullet' => '<span class="bullet bullet-dot"></span>',
-                    // ),
                 ),
             ),
         ),

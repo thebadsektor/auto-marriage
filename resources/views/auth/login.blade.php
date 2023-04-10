@@ -8,7 +8,7 @@
         <div class="text-center mb-10">
             <!--begin::Title-->
             <h1 class="text-dark mb-3">
-                {{ __('Sign In to Metronic') }}
+                {{ __('Sign In') }}
             </h1>
             <!--end::Title-->
 
@@ -73,31 +73,31 @@
         <!--end::Input group-->
 
         <!--begin::Actions-->
-        <div class="text-center">
+        {{-- <div class="text-center"> --}}
             <!--begin::Submit button-->
-            <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+            {{-- <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
                 @include('partials.general._button-indicator', ['label' => __('Continue')])
-            </button>
+            </button> --}}
             <!--end::Submit button-->
 
             <!--begin::Separator-->
-            <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div>
+            {{-- <div class="text-center text-muted text-uppercase fw-bolder mb-5">or</div> --}}
             <!--end::Separator-->
 
             <!--begin::Google link-->
-            <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+            {{-- <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
                 <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg') }}" class="h-20px me-3"/>
                 {{ __('Continue with Google') }}
-            </a>
+            </a> --}}
             <!--end::Google link-->
 
             <!--begin::Facebook link-->
-            <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+            {{-- <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
                 <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg') }}" class="h-20px me-3"/>
                 {{ __('Continue with Facebook') }}
-            </a>
+            </a> --}}
             <!--end::Facebook link-->
-        </div>
+        {{-- </div> --}}
         <!--end::Actions-->
     </form>
     <!--end::Signin Form-->

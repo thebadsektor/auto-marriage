@@ -10,10 +10,12 @@
             <!--begin::Content-->
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
-                <a href="{{ $theme->getPageUrl('') }}" class="mb-12">
+                {{-- <a href="{{ $theme->getPageUrl('') }}" class="mb-12">
                     <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/default.svg') }}" class="h-45px"/>
-                </a>
+                </a> --}}
                 <!--end::Logo-->
+
+                <img alt="Logo" src="http://127.0.0.1:8000/demo1/media/logos/bay-logo-trans.png" class="h-100px logo mb-10">
 
                 <!--begin::Wrapper-->
                 <div class="{{ $wrapperClass ?? '' }} bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
@@ -24,17 +26,17 @@
             <!--end::Content-->
 
             <!--begin::Footer-->
-            <div class="d-flex flex-center flex-column-auto p-10">
+            {{-- <div class="d-flex flex-center flex-column-auto p-10"> --}}
                 <!--begin::Links-->
-                <div class="d-flex align-items-center fw-bold fs-6">
+                {{-- <div class="d-flex align-items-center fw-bold fs-6">
                     <a href="{{ $theme->getOption("general", "about") }}" class="text-muted text-hover-primary px-2">{{ __('About') }}</a>
 
                     <a href="{{ $theme->getOption('general', 'contact') }}" class="text-muted text-hover-primary px-2">{{ __('Contact Us') }}</a>
 
                     <a href="{{ $theme->getOption('product', 'purchase') }}" class="text-muted text-hover-primary px-2">{{ __('Purchase') }}</a>
-                </div>
+                </div> --}}
                 <!--end::Links-->
-            </div>
+            {{-- </div> --}}
             <!--end::Footer-->
         </div>
         <!--end::Authentication-->

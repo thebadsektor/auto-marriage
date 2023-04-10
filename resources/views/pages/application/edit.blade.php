@@ -180,7 +180,7 @@
                         </div>
                         <div class="row mb-3">
                             <label for="sworn_date"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Date Subscribe and Sworn') }}</label>
+                                class="col-md-4 col-form-label text-md-end">{{ __('Date Subscribed and Sworn') }}</label>
 
                             <div class="col-md-6">
                                 <input id="sworn_date" type="date"

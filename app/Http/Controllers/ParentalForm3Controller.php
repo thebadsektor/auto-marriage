@@ -66,7 +66,7 @@ class ParentalForm3Controller extends Controller
             ]);
         }else{
 
-            $parental_form = ParentalForm3::create([
+            ParentalForm3::create([
                 'municipality' => $request['municipality'],
                 'province' => $request['province'],
                 'name' => $request['name'],

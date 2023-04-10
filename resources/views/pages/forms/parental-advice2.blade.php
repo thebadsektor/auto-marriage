@@ -305,7 +305,7 @@
                 $('#name_female2').val(name_female);
                 $('#address').val(address);
                 $('#address2').val(address2);
-                const modal = bootstrap.Modal.getInstance($('#form2_modal'));
+                const modal = bootstrap.Modal.getInstance($('#form3_modal'));
                 modal.hide();
             });
 
@@ -321,5 +321,4 @@
             });
         });
     });
-
 </script>

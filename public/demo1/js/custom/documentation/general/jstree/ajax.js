@@ -1,0 +1,33 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/assets/core/js/custom/documentation/general/jstree/ajax.js":
+/*!******************************************************************************!*\
+  !*** ./resources/assets/core/js/custom/documentation/general/jstree/ajax.js ***!
+  \******************************************************************************/
+/***/ (() => {
+
+eval("\n\n// Class definition\nvar KTJSTreeAjax = function () {\n  // Private functions\n  var exampleAjax = function exampleAjax() {\n    $(\"#kt_docs_jstree_ajax\").jstree({\n      \"core\": {\n        \"themes\": {\n          \"responsive\": false\n        },\n        // so that create works\n        \"check_callback\": true,\n        'data': {\n          'url': function url(node) {\n            return 'https://preview.keenthemes.com/api/jstree/ajax_data.php'; // Demo API endpoint -- Replace this URL with your set endpoint\n          },\n\n          'data': function data(node) {\n            return {\n              'parent': node.id\n            };\n          }\n        }\n      },\n      \"types\": {\n        \"default\": {\n          \"icon\": \"fa fa-folder text-primary\"\n        },\n        \"file\": {\n          \"icon\": \"fa fa-file  text-primary\"\n        }\n      },\n      \"state\": {\n        \"key\": \"demo3\"\n      },\n      \"plugins\": [\"dnd\", \"state\", \"types\"]\n    });\n  };\n  return {\n    // Public Functions\n    init: function init() {\n      exampleAjax();\n    }\n  };\n}();\n\n// On document ready\nKTUtil.onDOMContentLoaded(function () {\n  KTJSTreeAjax.init();\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvYXNzZXRzL2NvcmUvanMvY3VzdG9tL2RvY3VtZW50YXRpb24vZ2VuZXJhbC9qc3RyZWUvYWpheC5qcy5qcyIsIm1hcHBpbmdzIjoiQUFBYTs7QUFFYjtBQUNBLElBQUlBLFlBQVksR0FBRyxZQUFXO0VBQzFCO0VBQ0EsSUFBSUMsV0FBVyxHQUFHLFNBQWRBLFdBQVdBLENBQUEsRUFBYztJQUN6QkMsQ0FBQyxDQUFDLHNCQUFzQixDQUFDLENBQUNDLE1BQU0sQ0FBQztNQUM3QixNQUFNLEVBQUU7UUFDSixRQUFRLEVBQUU7VUFDTixZQUFZLEVBQUU7UUFDbEIsQ0FBQztRQUNEO1FBQ0EsZ0JBQWdCLEVBQUUsSUFBSTtRQUN0QixNQUFNLEVBQUU7VUFDSixLQUFLLEVBQUUsU0FBQUMsSUFBU0MsSUFBSSxFQUFFO1lBQ2xCLE9BQU8seURBQXlELENBQUMsQ0FBQztVQUN0RSxDQUFDOztVQUNELE1BQU0sRUFBRSxTQUFBQyxLQUFTRCxJQUFJLEVBQUU7WUFDbkIsT0FBTztjQUNILFFBQVEsRUFBRUEsSUFBSSxDQUFDRTtZQUNuQixDQUFDO1VBQ0w7UUFDSjtNQUNKLENBQUM7TUFDRCxPQUFPLEVBQUU7UUFDTCxTQUFTLEVBQUU7VUFDUCxNQUFNLEVBQUU7UUFDWixDQUFDO1FBQ0QsTUFBTSxFQUFFO1VBQ0osTUFBTSxFQUFFO1FBQ1o7TUFDSixDQUFDO01BQ0QsT0FBTyxFQUFFO1FBQ0wsS0FBSyxFQUFFO01BQ1gsQ0FBQztNQUNELFNBQVMsRUFBRSxDQUFDLEtBQUssRUFBRSxPQUFPLEVBQUUsT0FBTztJQUN2QyxDQUFDLENBQUM7RUFDTixDQUFDO0VBRUQsT0FBTztJQUNIO0lBQ0FDLElBQUksRUFBRSxTQUFBQSxLQUFBLEVBQVc7TUFDYlAsV0FBVyxFQUFFO0lBQ2pCO0VBQ0osQ0FBQztBQUNMLENBQUMsRUFBRTs7QUFFSDtBQUNBUSxNQUFNLENBQUNDLGtCQUFrQixDQUFDLFlBQVc7RUFDakNWLFlBQVksQ0FBQ1EsSUFBSSxFQUFFO0FBQ3ZCLENBQUMsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9hc3NldHMvY29yZS9qcy9jdXN0b20vZG9jdW1lbnRhdGlvbi9nZW5lcmFsL2pzdHJlZS9hamF4LmpzP2ViNmYiXSwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc3RyaWN0XCI7XHJcblxyXG4vLyBDbGFzcyBkZWZpbml0aW9uXHJcbnZhciBLVEpTVHJlZUFqYXggPSBmdW5jdGlvbigpIHtcclxuICAgIC8vIFByaXZhdGUgZnVuY3Rpb25zXHJcbiAgICB2YXIgZXhhbXBsZUFqYXggPSBmdW5jdGlvbigpIHtcclxuICAgICAgICAkKFwiI2t0X2RvY3NfanN0cmVlX2FqYXhcIikuanN0cmVlKHtcclxuICAgICAgICAgICAgXCJjb3JlXCI6IHtcclxuICAgICAgICAgICAgICAgIFwidGhlbWVzXCI6IHtcclxuICAgICAgICAgICAgICAgICAgICBcInJlc3BvbnNpdmVcIjogZmFsc2VcclxuICAgICAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgICAgICAvLyBzbyB0aGF0IGNyZWF0ZSB3b3Jrc1xyXG4gICAgICAgICAgICAgICAgXCJjaGVja19jYWxsYmFja1wiOiB0cnVlLFxyXG4gICAgICAgICAgICAgICAgJ2RhdGEnOiB7XHJcbiAgICAgICAgICAgICAgICAgICAgJ3VybCc6IGZ1bmN0aW9uKG5vZGUpIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuICdodHRwczovL3ByZXZpZXcua2VlbnRoZW1lcy5jb20vYXBpL2pzdHJlZS9hamF4X2RhdGEucGhwJzsgLy8gRGVtbyBBUEkgZW5kcG9pbnQgLS0gUmVwbGFjZSB0aGlzIFVSTCB3aXRoIHlvdXIgc2V0IGVuZHBvaW50XHJcbiAgICAgICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgICAgICAnZGF0YSc6IGZ1bmN0aW9uKG5vZGUpIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdwYXJlbnQnOiBub2RlLmlkXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH07XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICBcInR5cGVzXCI6IHtcclxuICAgICAgICAgICAgICAgIFwiZGVmYXVsdFwiOiB7XHJcbiAgICAgICAgICAgICAgICAgICAgXCJpY29uXCI6IFwiZmEgZmEtZm9sZGVyIHRleHQtcHJpbWFyeVwiXHJcbiAgICAgICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICAgICAgXCJmaWxlXCI6IHtcclxuICAgICAgICAgICAgICAgICAgICBcImljb25cIjogXCJmYSBmYS1maWxlICB0ZXh0LXByaW1hcnlcIlxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICBcInN0YXRlXCI6IHtcclxuICAgICAgICAgICAgICAgIFwia2V5XCI6IFwiZGVtbzNcIlxyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICBcInBsdWdpbnNcIjogW1wiZG5kXCIsIFwic3RhdGVcIiwgXCJ0eXBlc1wiXVxyXG4gICAgICAgIH0pO1xyXG4gICAgfVxyXG5cclxuICAgIHJldHVybiB7XHJcbiAgICAgICAgLy8gUHVibGljIEZ1bmN0aW9uc1xyXG4gICAgICAgIGluaXQ6IGZ1bmN0aW9uKCkge1xyXG4gICAgICAgICAgICBleGFtcGxlQWpheCgpO1xyXG4gICAgICAgIH1cclxuICAgIH07XHJcbn0oKTtcclxuXHJcbi8vIE9uIGRvY3VtZW50IHJlYWR5XHJcbktUVXRpbC5vbkRPTUNvbnRlbnRMb2FkZWQoZnVuY3Rpb24oKSB7XHJcbiAgICBLVEpTVHJlZUFqYXguaW5pdCgpO1xyXG59KTtcclxuIl0sIm5hbWVzIjpbIktUSlNUcmVlQWpheCIsImV4YW1wbGVBamF4IiwiJCIsImpzdHJlZSIsInVybCIsIm5vZGUiLCJkYXRhIiwiaWQiLCJpbml0IiwiS1RVdGlsIiwib25ET01Db250ZW50TG9hZGVkIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/assets/core/js/custom/documentation/general/jstree/ajax.js\n");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./resources/assets/core/js/custom/documentation/general/jstree/ajax.js"]();
+/******/ 	
+/******/ })()
+;

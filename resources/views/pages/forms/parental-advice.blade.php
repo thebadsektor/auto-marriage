@@ -3,7 +3,7 @@
         <div class="col-xl-12">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice') }}" class="w-100">
+                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice2') }}" class="w-100">
                         @csrf
                         <div class="w-100 d-flex align-items-center">
                             <h3 class="card-title fw-bold text-nowrap">Parental Advice</h3><input class="form-control h-30px fw-normal d-inline-block" type="text" id="form_id" name="form_id" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px" readonly>

@@ -3,7 +3,7 @@
         <div class="col-xl-12">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice') }}" class="w-100">
+                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice2') }}" class="w-100">
                         @csrf
                         <div class="w-100 d-flex align-items-center">
                             <h3 class="card-title fw-bold text-nowrap">Parental Advice (2)</h3><input class="form-control h-30px fw-normal d-inline-block" type="text" id="form_id" name="form_id" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px" disabled>
@@ -35,11 +35,11 @@
                                         <div class="px-5 py-5 d-flex flex-column gap-3">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <div class="text-nowrap">Place</div>
-                                                <input class="form-control h-30px fw-normal" type="text" name="address" style="background-color: #F2F0F0; width: 180px">
+                                                <input class="form-control h-30px fw-normal" type="text" id="address" name="address" style="background-color: #F2F0F0; width: 180px">
                                             </div>
                                             <div class="d-flex gap-2 align-items-center">
                                                 <div class="text-nowrap">To</div>
-                                                <input class="form-control h-30px fw-normal" type="text" name="name_male" style="background-color: #F2F0F0; width: 180px">
+                                                <input class="form-control h-30px fw-normal" type="text" id="name_male" name="name_male" style="background-color: #F2F0F0; width: 180px">
                                             </div>
                                         </div>
                                     </td>
@@ -47,7 +47,7 @@
 
                                 <tr>
                                     <td colspan="20">
-                                        <p class="py-5 px-5">Our/My advice upon your intended marriage with <input class="form-control h-30px fw-normal d-inline-block" type="text" name="name_female" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px"> having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry
+                                        <p class="py-5 px-5">Our/My advice upon your intended marriage with <input class="form-control h-30px fw-normal d-inline-block" type="text" id="name_female" name="name_female" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px"> having been asked by you, and knowing no legal impediment to this marriage, we/I hereby advice you to marry
                                             her.</p>
                                     </td>
                                 </tr>
@@ -89,7 +89,7 @@
                                         <div class="px-5 py-5 d-flex flex-column gap-3">
                                             <div class="d-flex gap-2 align-items-center">
                                                 <div class="text-nowrap">Place</div>
-                                                <input class="form-control h-30px fw-normal" type="text" name="address2" style="background-color: #F2F0F0; width: 180px">
+                                                <input class="form-control h-30px fw-normal" type="text" id="address2" name="address2" style="background-color: #F2F0F0; width: 180px">
                                             </div>
                                             <div class="d-flex gap-2 align-items-center">
                                                 <div class="text-nowrap">To</div>

@@ -115,8 +115,14 @@ Route::get('/calendar', [AppointmentController::class, 'index']);
 Route::get('/forms/parental-advice', [FormsController::class, 'parentalAdvice']);
 Route::post('/parental-form/process', [ParentalForm1Controller::class, 'process'])->name('process-parental-advice');
 Route::get('/parental-forms/all', [ParentalForm1Controller::class, 'all'])->name('all.parental-forms');
+
 Route::get('/forms/parental-advice2', [FormsController::class, 'parentalAdvice2']);
+Route::post('/parental-form2/process', [ParentalForm2Controller::class, 'process'])->name('process-parental-advice2');
+Route::get('/parental-form2s/all', [ParentalForm2Controller::class, 'all'])->name('all.parental-form2s');
+
 Route::get('/forms/parental-consent', [FormsController::class, 'parentalConsent']);
+// Route::post('/parental-form3/process', [ParentalForm3Controller::class, 'process'])->name('process-parental-advice3');
+// Route::get('/parental-form3s/all', [ParentalForm3Controller::class, 'all'])->name('all.parental-form3s');
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite

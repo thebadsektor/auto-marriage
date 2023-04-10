@@ -196,11 +196,11 @@ return array(
     // Main menu
     'main'          => array(
         //// Dashboard
-        array(
-            'title' => 'Dashboard',
-            'path'  => '',
-            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/art/art002.svg", "svg-icon-2"),
-        ),
+        // array(
+        //     'title' => 'Dashboard',
+        //     'path'  => '',
+        //     'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/art/art002.svg", "svg-icon-2"),
+        // ),
 
         //// Modules
         array(

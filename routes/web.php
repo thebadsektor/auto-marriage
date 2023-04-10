@@ -127,6 +127,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/parental-form3/process', [ParentalForm3Controller::class, 'process'])->name('process-parental-advice3');
     Route::get('/parental-form3s/all', [ParentalForm3Controller::class, 'all'])->name('all.parental-form3s');
 });
+
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('optimize');
+    Artisan::call('route:cache');
+
+    return "All cache, configuration, view, and route data have been cleared and optimized. The application is now running faster and using fresh configuration, cache, and view data.";
+});
+
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite

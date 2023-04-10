@@ -76,16 +76,16 @@ class ParentalForm2Controller extends Controller
 
     public function all()
     {
-        $form1 = ParentalForm2::query()->orderBy('updated_at', 'desc');
-        return DataTables::eloquent($form1)
-        ->addColumn('action', function($form1) {
-            return 'data-id="' . $form1->id . '"
-            data-address="' . $form1->address . '"
-            data-address2="' . $form1->address2 . '"
-            data-name-male="' . $form1->name_male . '"
-            data-name-female="' . $form1->name_female . '"
-            data-created="' . $form1->created_at . '"
-            data-updated="' . $form1->updated_at . '"';
+        $form2 = ParentalForm2::query()->orderBy('updated_at', 'desc');
+        return DataTables::eloquent($form2)
+        ->addColumn('action', function($form2) {
+            return 'data-id="' . $form2->id . '"
+            data-address="' . $form2->address . '"
+            data-address2="' . $form2->address2 . '"
+            data-name-male="' . $form2->name_male . '"
+            data-name-female="' . $form2->name_female . '"
+            data-created="' . $form2->created_at . '"
+            data-updated="' . $form2->updated_at . '"';
         })->toJson();
     }
 

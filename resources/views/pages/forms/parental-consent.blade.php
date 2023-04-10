@@ -48,7 +48,8 @@
                                     <td colspan="20">
                                         <div class="px-5 py-5">
                                             <div>I, <input class="form-control h-30px fw-normal d-inline-block" type="text" name="name" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, resident of
-                                                <input class="form-control h-30px fw-normal d-inline-block" type="text" name="address" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, and <select class="form-control h-30px fw-normal d-inline-block py-1" name="guardian" style="background-color: #F2F0F0; width: 140px; margin-left: 4px; margin-right: 4px">
+                                                <input class="form-control h-30px fw-normal d-inline-block" type="text" name="address" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, and 
+                                                <select class="form-control h-30px fw-normal d-inline-block py-1" name="guardian" style="background-color: #F2F0F0; width: 140px; margin-left: 4px; margin-right: 4px">
                                                     <option value="01">Father</option>
                                                     <option value="02">Mother</option>
                                                     <option value="03">Person in charge</option>
@@ -56,7 +57,7 @@
                                                     style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, single and less than {twenty, eighteen} years of age, being duly sworn, do hereby depose and say that I freely
                                                 consent to said <input class="form-control h-30px fw-normal d-inline-block" type="text" name="name3" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px; margin-top: 8px;">, marrying with <input class="form-control h-30px fw-normal d-inline-block" type="text" name="name4"
                                                     style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, resident of
-                                                ______________________, and that I know of no legal impediment to such marriage.
+                                                    <input class="form-control h-30px fw-normal d-inline-block" type="text" name="address3" style="background-color: #F2F0F0; width: 180px; margin-left: 4px; margin-right: 4px">, and that I know of no legal impediment to such marriage.
                                             </div>
                                         </div>
                                     </td>

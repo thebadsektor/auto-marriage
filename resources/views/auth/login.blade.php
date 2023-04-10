@@ -73,11 +73,11 @@
         <!--end::Input group-->
 
         <!--begin::Actions-->
-        {{-- <div class="text-center"> --}}
+        <div class="text-center">
             <!--begin::Submit button-->
-            {{-- <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+            <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
                 @include('partials.general._button-indicator', ['label' => __('Continue')])
-            </button> --}}
+            </button>
             <!--end::Submit button-->
 
             <!--begin::Separator-->
@@ -97,7 +97,7 @@
                 {{ __('Continue with Facebook') }}
             </a> --}}
             <!--end::Facebook link-->
-        {{-- </div> --}}
+        </div>
         <!--end::Actions-->
     </form>
     <!--end::Signin Form-->

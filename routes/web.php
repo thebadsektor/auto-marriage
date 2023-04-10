@@ -14,6 +14,8 @@ use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\ParentalForm1Controller;
+use App\Http\Controllers\ParentalForm2Controller;
+use App\Http\Controllers\ParentalForm3Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -121,8 +123,8 @@ Route::post('/parental-form2/process', [ParentalForm2Controller::class, 'process
 Route::get('/parental-form2s/all', [ParentalForm2Controller::class, 'all'])->name('all.parental-form2s');
 
 Route::get('/forms/parental-consent', [FormsController::class, 'parentalConsent']);
-// Route::post('/parental-form3/process', [ParentalForm3Controller::class, 'process'])->name('process-parental-advice3');
-// Route::get('/parental-form3s/all', [ParentalForm3Controller::class, 'all'])->name('all.parental-form3s');
+Route::post('/parental-form3/process', [ParentalForm3Controller::class, 'process'])->name('process-parental-advice3');
+Route::get('/parental-form3s/all', [ParentalForm3Controller::class, 'all'])->name('all.parental-form3s');
 /**
  * Socialite login using Google service
  * https://laravel.com/docs/8.x/socialite

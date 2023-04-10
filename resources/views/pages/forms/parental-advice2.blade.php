@@ -7,10 +7,10 @@
                         @csrf
                         <div class="w-100 d-flex align-items-center">
                             <h3 class="card-title fw-bold text-nowrap">Parental Advice (2)</h3><input class="form-control h-30px fw-normal d-inline-block" type="text" id="form_id" name="form_id" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px" disabled>
-                            <button class="btn btn-sm btn-secondary d-flex justify-content-center align-items-center" style="font-size: 11px; height: 30px; width: 50px;">Clear</button>
+                            <a href="#" id="btn_clear" class="btn btn-sm btn-secondary d-flex justify-content-center align-items-center" style="font-size: 11px; height: 30px; width: 50px;">Clear</a>
                             <div class="w-100 card-toolbar justify-content-end">
-                                <button type="button" class="btn btn-sm btn-light">
-                                    Action
+                                <button type="button" class="btn btn-sm btn-info" id="btn_clear" data-bs-toggle="modal" data-bs-target="#form2_modal">
+                                    Browse
                                 </button>
                             </div>
                         </div>
@@ -153,4 +153,120 @@
             </div>
         </div>
     </div>
+    @include('pages.forms._parental-advice2')
 </x-base-layout>
+<script>
+    $(document).ready(function() {
+        // Common DataTable configuration object
+        let dataTableConfig = {
+            "language": {
+                "lengthMenu": "Show _MENU_",
+            },
+            "select": true,
+            "pageLength": 5,
+            "dom": "<'row'" +
+                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                ">" +
+                "<'table-responsive'tr>" +
+                "<'row'" +
+                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                ">" +
+                "<'row'>"
+        };
+
+        function initializeDataTable() {
+            let table = $('#parental-form-table').DataTable($.extend(dataTableConfig, {
+            "processing": true,
+            "serverSide": true,
+            "ajax": "/parental-form2s/all",
+            "columns": [
+                { "data": "name_male" },
+                { "data": "name_female" },
+                { "data": "address" },
+                { "data": "address2" }
+            ],
+            "createdRow": function(row, data, dataIndex) {
+                console.log("Data used to create row:", data);
+                $(row).attr('data-id', data.id);
+                $(row).attr('data-data-address', data.municipality);
+                $(row).attr('data-address2', data.province);
+                $(row).attr('data-name-male', data.name);
+                $(row).attr('data-name-female', data.address);
+                $(row).attr('data-created', data.created_at);
+                $(row).attr('data-updated', data.updated_at);
+                $(row).addClass('selectable');
+            }
+            }));
+            return table;
+        }
+
+        let dataTable = initializeDataTable();
+
+        // Call this to refresh the DataTable
+        function refreshDataTable() {
+            dataTable.ajax.reload();
+        }
+
+        $('#btn_process_form').on('click', function(event) {
+
+        var form = $('#form-process-form');
+        var url = form.attr('action');
+        var method = form.attr('method');
+        var data = form.serialize();
+        var form_id = $('#form_id').val();
+        console.log(data);
+        // Check if owner_id field is present
+        if (data.indexOf('form_id=') !== -1) {
+            console.log('Update!');
+        } else {
+            console.log('New!');
+        }
+
+        $.ajax({
+            url: '/parental-form2/process',
+            method: method,
+            data: data,
+            dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            beforeSend: function() {
+                // Show loading indicator
+                $('#btn_process_form .indicator-label').hide();
+                $('#btn_process_form .indicator-progress').show();
+            },
+            success: function(response) {
+                // Hide loading indicator
+                $('#btn_process_form .indicator-label').show();
+                $('#btn_process_form .indicator-progress').hide();
+
+                // Show success message in SweetAlert
+                Swal.fire({
+                    title: 'Success',
+                    text: response.message,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(() => {
+                    refreshDataTable();
+                });
+            },
+            error: function(response) {
+                // Hide loading indicator
+                $('#btn_process_form .indicator-label').show();
+                $('#btn_process_form .indicator-progress').hide();
+
+                // Show error message in SweetAlert
+                Swal.fire({
+                    title: 'Error',
+                    text: response.responseJSON.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    });
+
+</script>

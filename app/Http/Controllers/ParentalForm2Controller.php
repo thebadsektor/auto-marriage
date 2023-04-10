@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ParentalForm2;
 use Illuminate\Http\Request;
-use Datatable;
+use DataTables;
 
 class ParentalForm2Controller extends Controller
 {

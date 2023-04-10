@@ -3,14 +3,14 @@
         <div class="col-xl-12">
             <div class="card shadow-sm">
                 <div class="card-header">
-                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice') }}" class="w-100">
+                    <form id="form-process-form" method="POST" action="{{ route('process-parental-advice3') }}" class="w-100">
                         @csrf
                         <div class="w-100 d-flex align-items-center">
                             <h3 class="card-title fw-bold text-nowrap">Parental Consent</h3><input class="form-control h-30px fw-normal d-inline-block" type="text" id="form_id" name="form_id" style="background-color: #F2F0F0; width: 60px; margin-left: 4px; margin-right: 4px" disabled>
-                            <button class="btn btn-sm btn-secondary d-flex justify-content-center align-items-center" style="font-size: 11px; height: 30px; width: 50px;">Clear</button>
+                            <a href="#" id="btn_clear" class="btn btn-sm btn-secondary d-flex justify-content-center align-items-center" style="font-size: 11px; height: 30px; width: 50px;">Clear</a>
                             <div class="w-100 card-toolbar justify-content-end">
-                                <button type="button" class="btn btn-sm btn-light">
-                                    Action
+                                <button type="button" class="btn btn-sm btn-info" id="btn_clear" data-bs-toggle="modal" data-bs-target="#form3_modal">
+                                    Browse
                                 </button>
                             </div>
                         </div>
@@ -98,4 +98,5 @@
             </div>
         </div>
     </div>
+    @include('pages.forms._parental-advice3')
 </x-base-layout>

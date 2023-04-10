@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" id="form1_modal">
+<div class="modal fade" tabindex="-1" id="form2_modal">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">

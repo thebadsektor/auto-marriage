@@ -1,8 +1,8 @@
-<div class="modal fade" tabindex="-1" id="form1_modal">
+<div class="modal fade" tabindex="-1" id="form3_modal">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Browse Parental consent Records</h3>
+                <h3 class="modal-title">Browse Parental Consent Records</h3>
 
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -18,8 +18,8 @@
                             class="table table-row-bordered border rounded gy-5 gs-7">
                             <thead>
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                    <th scope="col">Groom</th>
-                                    <th scope="col">Bride</th>
+                                    <th scope="col">Under Aged Person</th>
+                                    <th scope="col">Guardian</th>
                                     <th scope="col">Municipality</th>
                                     <th scope="col">Province</th>
                                 </tr>

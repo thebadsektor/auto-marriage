@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ParentalForm3;
 use Illuminate\Http\Request;
-use Datatable;
+use DataTables;
 
 class ParentalForm3Controller extends Controller
 {
@@ -61,7 +61,7 @@ class ParentalForm3Controller extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Parental Advice 2 Record Updated',
+                'message' => 'Parental Consent Record Updated',
 
             ]);
         }else{
@@ -81,7 +81,7 @@ class ParentalForm3Controller extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Parental Advice 2 Record Created',
+                'message' => 'Parental Consent Record Created',
             ]);
         }
     }

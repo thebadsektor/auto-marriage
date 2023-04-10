@@ -12,7 +12,7 @@
                                 <button type="button" class="btn btn-sm btn-info" id="btn_clear" data-bs-toggle="modal" data-bs-target="#form2_modal">
                                     Browse
                                 </button>
-                                <a href="" class="btn fs-8">
+                                <a href="#" class="btn fs-8">
 
                                     <i class="fa fa-print"></i>Print
                                 </a>

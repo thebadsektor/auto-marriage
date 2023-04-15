@@ -212,7 +212,7 @@ return array(
         array(
             'title'      => 'Marriage License Application',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/communication/com006.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/abstract/abs027.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-person fs-2"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),
@@ -240,7 +240,7 @@ return array(
         array(
             'title'      => 'Forms',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/communication/com006.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen005.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-person fs-2"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),
@@ -273,7 +273,7 @@ return array(
         array(
             'title' => 'Calendar',
             'path'  => 'calendar',
-            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/art/art002.svg", "svg-icon-2"),
+            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotune/general/gen014.svg", "svg-icon-2"),
         ),
 
         // Account

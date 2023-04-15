@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\SampleDataController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,4 +34,8 @@ Route::post('/forgot_password', [PasswordResetLinkController::class, 'apiStore']
 Route::post('/verify_token', [AuthenticatedSessionController::class, 'apiVerifyToken']);
 
 Route::get('/users', [SampleDataController::class, 'getUsers']);
+
+Route::get('/events/fetch', [EventController::class, 'fetch']);
+Route::post('/events/process', [EventController::class, 'process']);
+Route::delete('/events/delete/{event}', [EventController::class, 'delete']);
 

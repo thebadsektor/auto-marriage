@@ -16,6 +16,7 @@ use App\Http\Controllers\FormsController;
 use App\Http\Controllers\ParentalForm1Controller;
 use App\Http\Controllers\ParentalForm2Controller;
 use App\Http\Controllers\ParentalForm3Controller;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -126,6 +127,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/forms/parental-consent', [FormsController::class, 'parentalConsent']);
     Route::post('/parental-form3/process', [ParentalForm3Controller::class, 'process'])->name('process-parental-advice3');
     Route::get('/parental-form3s/all', [ParentalForm3Controller::class, 'all'])->name('all.parental-form3s');
+
+    Route::get('/event/seed', [EventController::class, 'seed']);
+    // Route::get('/events/fetch', [EventController::class, 'fetch']);
+    // Route::post('/events/process', [EventController::class, 'process']);
+    // Route::delete('/event/delete/{event}', [EventController::class, 'delete']);
 });
 
 Route::get('/clear', function () {

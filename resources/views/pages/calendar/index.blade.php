@@ -1,4 +1,9 @@
 <style>
+    .fc-daygrid-day.fc-day-today .fc-daygrid-day-top {
+        color: #337ab7;
+        border-color: black;
+        background-color: #8cff94;
+    }
     .fc-day-sat {
         color:#337ab7;
         border-color: black;
@@ -83,7 +88,7 @@
                 }
 
                 Swal.fire({
-                    title: 'Create New Event',
+                    title: 'Create New Appointment',
                     html: '<input type="text" class="form-control mb-2" name="event_name" placeholder="Event Name" value="My Appoinment">' +
                         '<div>Date: ' + arg.startStr.slice(0, 10) + '</div>' +
                         '<input type="hidden" name="start_date" value="' + arg.startStr + '">' +
@@ -152,6 +157,9 @@
                             .then(function(response) {
                                 // Remove the event from the calendar
                                 arg.event.remove();
+
+                                // Manually refresh the calendar view
+                                calendar.refetchEvents();
                             })
                             .catch(function(error) {
                                 console.error(error);

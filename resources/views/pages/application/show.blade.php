@@ -49,7 +49,7 @@
                                                 {{ $applicant->firstname . ' ' . $applicant->lastname }}
                                             </a>
                                         @endif
-                                    @endforeach    
+                                    @endforeach
                                 </p>
                             </div>
                         </div>
@@ -155,6 +155,14 @@
                             </div>
                             <div class="col-md-6">
                                 <p>{{ $application->ctc_place }}</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <p>Expiration Date:</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{ \Carbon\Carbon::parse($application->created_at)->addDays(120)->format('Y-m-d') }}</p>
                             </div>
                         </div>
                         <div class="row mb-3">

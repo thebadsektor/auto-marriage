@@ -36,6 +36,11 @@
             { title: 'Additional special (non-working day)', date: '2023-11-02' },
         ];
 
+        function isHoliday(date) {
+            const dateString = date.toISOString().slice(0, 10);
+            return philippineHolidays.some(holiday => holiday.date === dateString);
+        }
+
         var calendarEl = document.getElementById("kt_docs_fullcalendar_selectable");
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -60,17 +65,29 @@
 
             // Create new event
             select: function(arg) {
+
+                const localStartDate = new Date(arg.start.getTime() - arg.start.getTimezoneOffset() * 60000);
+
+                // Check if the selected date is a weekend or a holiday
+                if (localStartDate.getDay() === 6 || localStartDate.getDay() === 0 || isHoliday(localStartDate)) {
+                    Swal.fire({
+                        text: "You cannot create an event on weekends or holidays.",
+                        icon: "error",
+                        buttonsStyling: false,
+                        confirmButtonText: "Ok, got it!",
+                        customClass: {
+                            confirmButton: "btn btn-primary",
+                        }
+                    });
+                    return;
+                }
+
                 Swal.fire({
                     title: 'Create New Event',
-                    html: '<input type="text" class="form-control mb-2" name="event_name" placeholder="Event Name">' +
-                        '<div class="input-group">' +
-                            '<span class="input-group-text">Start</span>' +
-                            '<input type="datetime-local" class="form-control" name="start_date" value="' + arg.startStr + '">' +
-                        '</div>' +
-                        '<div class="input-group">' +
-                            '<span class="input-group-text">End</span>' +
-                            '<input type="datetime-local" class="form-control" name="end_date" value="' + arg.endStr + '">' +
-                        '</div>',
+                    html: '<input type="text" class="form-control mb-2" name="event_name" placeholder="Event Name" value="My Appoinment">' +
+                        '<div>Date: ' + arg.startStr.slice(0, 10) + '</div>' +
+                        '<input type="hidden" name="start_date" value="' + arg.startStr + '">' +
+                        '<input type="hidden" name="end_date" value="' + new Date(arg.start.getTime() + 3600 * 1000).toISOString() + '">',
                     showCancelButton: true,
                     buttonsStyling: false,
                     confirmButtonText: 'Create',

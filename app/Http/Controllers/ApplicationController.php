@@ -88,7 +88,7 @@ class ApplicationController extends Controller
             'sworn_place' => $request->sworn_place,
             'ctc_no' => $request->ctc_no,
             'ctc_date' => $request->ctc_date,
-            'ctc_place' => $request->ctc_place,
+            'ctc_place' => $request->ctc_place
         ]);
 
         $lastCreatedId = $newApplication->id;

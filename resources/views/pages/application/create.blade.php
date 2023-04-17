@@ -61,7 +61,6 @@
                                         <option value="{{$bride->id}}">{{$bride->lastname  .', '. $bride->firstname}}</option>
                                     @endforeach
                                 </select>
-
                                 @error('bride_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -149,7 +148,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="issuance_date"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Date of Issuance of Marriage License') }}</label>
 
@@ -164,7 +163,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-3">
                             <label for="sworn_date"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Date Subscribe and Sworn') }}</label>
@@ -199,12 +198,12 @@
                             <div class="row mb-3">
                                 <label for="ctc_no"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Community Tax Certificate No.') }}</label>
-    
+
                                 <div class="col-md-6">
                                     <input id="ctc_no" type="text"
                                         class="form-control @error('ctc_no') is-invalid @enderror" name="ctc_no"
                                         value="{{ old('ctc_no') }}" required autocomplete="ctc_no" autofocus>
-    
+
                                     @error('ctc_no')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Applicant;
+use App\Models\Event;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ApplicationController extends Controller
 {
@@ -14,7 +16,7 @@ class ApplicationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
     public function index()
     {
         $applications = Application::with('applicants')->paginate(15);
@@ -22,7 +24,7 @@ class ApplicationController extends Controller
         return view('pages.application.index', compact('applications'));
 
     }
-    
+
     public function docu_auto()
     {
 
@@ -52,7 +54,7 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $this->validate($request, [
             'registry_no' => 'required',
             'groom_id' => 'required',
@@ -61,7 +63,6 @@ class ApplicationController extends Controller
             'city' => 'required',
             'rec_by' => 'required',
             'receipt_date' => 'required',
-            'issuance_date' => 'required',
             'sworn_date' => 'required',
             'sworn_place' => 'required',
             'ctc_no' => 'required',
@@ -71,9 +72,10 @@ class ApplicationController extends Controller
 
         $groom = Applicant::find($request->groom_id);
         $bride = Applicant::find($request->bride_id);
+        $registry_no = $request['registry_no'];
 
         $newApplication = Application::create([
-            'registry_no' => $request->registry_no,
+            'registry_no' => $registry_no,
             'groom_id' => $request->groom_id,
             'bride_id' => $request->bride_id,
             'province' => $request->province,
@@ -81,7 +83,7 @@ class ApplicationController extends Controller
             'rec_by' => $request->rec_by,
             'receipt_date' => $request->receipt_date,
             'license_no' => $request->license_no,
-            'issuance_date' => $request->issuance_date,
+            'issuance_date' => Carbon::now()->addDays(10), // Set issuance_date to today + 10 days
             'sworn_date' => $request->sworn_date,
             'sworn_place' => $request->sworn_place,
             'ctc_no' => $request->ctc_no,
@@ -101,6 +103,15 @@ class ApplicationController extends Controller
 
         ]);
 
+        $start = Carbon::now()->addDays(10)->format('Y-m-d H:i:s');
+        $end = Carbon::now()->addDays(10)->addHour()->format('Y-m-d H:i:s');
+
+        Event::create([
+            'title' => 'REG#: ' . $registry_no,
+            'start' => $start,
+            'end' => $end,
+            'all_day' => 0,
+        ]);
 
         return redirect('applications');
     }
@@ -118,7 +129,7 @@ class ApplicationController extends Controller
 
         return view('pages.application.show', compact('application', 'applicants'));
     }
-     
+
     public function show_form(Application $application)
     {
         $application = Application::with('applicants')->find($application->id);

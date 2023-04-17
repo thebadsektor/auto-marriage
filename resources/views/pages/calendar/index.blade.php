@@ -1,21 +1,40 @@
-{{-- <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'resourceTimelineWeek'
-      });
-      calendar.render();
-    });
-
-  </script> --}}
-{{-- {{ URL::asset('demo1/plugins/custom/fullcalendar/fullcalendar.bundle.css'); }} --}}
-{{-- <link href="demo1/plugins/custom/fullcalendar/fullcalendar.bundle.csss" rel="stylesheet" /> --}}
+<style>
+    .fc-day-sat {
+        color:#337ab7;
+        border-color: black;
+        background-color: #fffb8c; }
+    .fc-day-sun {
+        color:#337ab7;
+        border-color: black;
+        background-color: #ffa58c; }
+</style>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
 <!-- Moment.js -->
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+        const philippineHolidays = [
+            { title: 'New Year\'s Day', date: '2023-01-01' },
+            { title: 'Araw ng Kagitingan', date: '2023-04-09' },
+            { title: 'Maundy Thursday', date: '2023-04-06' },
+            { title: 'Good Friday', date: '2023-04-07' },
+            { title: 'Eid\'l Fitr', date: '2023-04-21' },
+            { title: 'Labor Day', date: '2023-05-01' },
+            { title: 'Independence Day', date: '2023-06-12' },
+            { title: 'National Heroes Day', date: '2023-08-28' },
+            { title: 'Bonifacio Day', date: '2023-11-30' },
+            { title: 'Christmas Day', date: '2023-12-25' },
+            { title: 'Rizal Day', date: '2023-12-30' },
+            { title: 'EDSA People Power Revolution Anniversary', date: '2023-02-25' },
+            { title: 'Black Saturday', date: '2023-04-08' },
+            { title: 'Ninoy Aquino\'s Day', date: '2023-08-21' },
+            { title: 'All Saint\'s Day', date: '2023-11-01' },
+            { title: 'Feast of the Immaculate Conception of Mary', date: '2023-12-08' },
+            { title: 'Last Day of the Year', date: '2023-12-31' },
+            { title: 'Additional special (non-working day)', date: '2023-01-02' },
+            { title: 'Additional special (non-working day)', date: '2023-11-02' },
+        ];
 
         var calendarEl = document.getElementById("kt_docs_fullcalendar_selectable");
 
@@ -30,7 +49,14 @@
             selectable: true,
             selectMirror: true,
 
-            events: "/api/events/fetch",
+            eventSources: [
+                {
+                    url: '/api/events/fetch'
+                },
+                {
+                    events: philippineHolidays
+                }
+            ],
 
             // Create new event
             select: function(arg) {
